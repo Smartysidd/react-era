@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { createContext } from "react";
 import CourseCard from './CourseCard'; 
 
-import introtojsImage from './src/introtojs.png';
-import reactjsImage from './src/reactjs.jpg';
-import reactVideo from './src/reactvideo.mp4';
-import jsVideo from './src/jsvideo.mp4';
+import introtojsImage from '../../src/introtojs.png';
+import reactjsImage from "../../src/reactjs.jpg";
+import reactVideo from "../../src/reactvideo.mp4";
+import jsVideo from "../../src/jsvideo.mp4";
+
+const courseAPI=createContext();
+
 
 const courses = [
   {
     id: 1,
     title: 'Introduction to JavaScript',
     description: 'Learn the fundamentals of JavaScript programming.',
-    image: introtojsImage, 
+    image: 'introtojsImage', 
     author: 'John Doe',
     duration: '8 weeks',
     rating: 4.7,
@@ -62,13 +65,21 @@ const courses = [
 ];
 
 function CourseCatalog() {
+  // return (
+  //   <div className="course-catalog">
+  //     {courses.map(course => (
+  //       <CourseCard key={course.id} course={course} />
+  //     ))}
+  //   </div>
+  // );
   return (
-    <div className="course-catalog">
-      {courses.map(course => (
-        <CourseCard key={course.id} course={course} />
-      ))}
-    </div>
+    <>
+      <courseAPI.Provider value={courses}>
+        <CourseCard></CourseCard>
+      </courseAPI.Provider>
+    </>
   );
 }
 
 export default CourseCatalog;
+export {courseAPI};
