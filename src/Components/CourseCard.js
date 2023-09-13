@@ -1,5 +1,5 @@
-import React from "react";
-import { courseAPI } from "./CourseCatalog";
+import React, { useContext } from "react";
+import { CourseAPI } from "./CourseCatalog";
 
 
 function CourseCatalog() {
