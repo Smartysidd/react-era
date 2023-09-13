@@ -5,11 +5,10 @@ import reactjsImage from "../../src/reactjs.jpg";
 import reactVideo from "../../src/reactvideo.mp4";
 import jsVideo from "../../src/jsvideo.mp4";
 
-// Create a context for your courses
+
 const CourseAPI = createContext();
 
 const courses = [
-  // Your course data here...
 ];
 
 function CourseCatalog() {
